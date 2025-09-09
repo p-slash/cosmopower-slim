@@ -1,4 +1,4 @@
-This is the slim version of [CosmoPower](https://github.com/alessiospuriomancini/cosmopower) that requires only numpy and numba. Tensorflow dependencies are removed. Please cite the original work.
+This is the slim version of [CosmoPower](https://github.com/alessiospuriomancini/cosmopower) that requires only numpy. Tensorflow dependencies are removed. Please cite the original work.
 
 # Citation
 
