@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cosmopower_slim"
+dynamic = ["dependencies", "version", "readme"]
+description = "Cosmopower but slim."
+requires-python = ">=3.9"
+license-files = ["LICENSE" ]
+authors = [
+    { name = "Naim Goksel Karacayli", email = "ngokselk@gmail.com" },
+]
+classifiers = [
+    "Programming Language :: Python :: 3"
+]
+
+[tool.setuptools.dynamic]
+version = {attr = "cosmopower_slim.__version__"}
+readme = {file = "README.md"}
+dependencies = {file = "requirements.txt"}
+
+[tool.setuptools.package-data]
+cosmopower_slim = ["trained_models/*"]
