@@ -20,7 +20,7 @@ class cosmopower_NN():
         with imprsrc.files("cosmopower_slim").joinpath(
             "trained_models", "k_modes.txt"
         ).open() as f:
-            self._log10k = np.log10(np.loadtxt(f))
+            self.log10k = np.log10(np.loadtxt(f))
 
     def dict_to_ordered_arr_np(self, input_dict):
         """Sort input parameters
