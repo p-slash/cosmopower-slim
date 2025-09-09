@@ -7,17 +7,18 @@ import numpy as np
 class cosmopower_NN():
     def __init__(self):
         with imprsrc.files("cosmopower_slim").joinpath(
-            "trained_models", "CP_paper", "PK", "PKLIN_NN.pkl"
+            "trained_models", "PKLIN_NN.pkl"
         ).open('rb') as f:
             (self.W, self.b, self.alphas, self.betas,
              self.parameters_mean, self.parameters_std,
              self.features_mean, self.features_std,
              self.n_parameters, self.parameters,
              self.n_modes, self.modes,
-             self.n_hidden, self.n_layers, self.architecture) = pickle.load(f)
+             self.n_hidden, self.n_layers, self.architecture
+             ) = pickle.load(f)
 
         with imprsrc.files("cosmopower_slim").joinpath(
-            "trained_models", "CP_paper", "PK", "k_modes.txt"
+            "trained_models", "k_modes.txt"
         ).open() as f:
             self._log10k = np.log10(np.loadtxt(f))
 
