@@ -1,5 +1,25 @@
 This is the slim version of [CosmoPower](https://github.com/alessiospuriomancini/cosmopower) that requires only numpy. Tensorflow dependencies are removed. Please cite the original work.
 
+Only the linear matter power spectrum is supported, which automatically loads. 
+
+# Install
+Run ``pip install cosmopower_slim@git+https://github.com/p-slash/cosmopower_slim.git``
+
+# Usage
+
+    import cosmopower_slim
+
+    cp = cosmopower_slim.cosmopower_NN()
+    
+    emu_params = {
+        'omega_b': [0.0225], 'omega_cdm': [0.113],
+        'h': [0.7], 'n_s': [0.96], 'ln10^{10}A_s': [3.07],
+        'z': [0.5]
+    }
+    
+    log10k = cp.log10k
+    log10_plin = cp.predictions_np(emu_params)[0]  # As in original cosmopower
+
 # Citation
 
 If you use ``CosmoPower`` at any point in your work please cite its [release paper](https://arxiv.org/abs/2106.03846):
